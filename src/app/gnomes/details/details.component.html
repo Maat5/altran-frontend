@@ -1,42 +1,42 @@
 <div class="details-container">
   <div class="gnome-details">
-    <img src="http://www.publicdomainpictures.net/pictures/10000/nahled/thinking-monkey-11282237747K8xB.jpg" alt="">
-    <h6>Tobus Quickwhistle</h6>
+    <img [src]="gnome?.thumbnail" alt="">
+    <h6> {{gnome?.name }}</h6>
     <ul>
       <li class="details-list">
         <div class="details-icon">
             <i class="fa fa-id-badge"></i>
         </div>
         <strong class="details-title"> Id: </strong> 
-        <span> 0 </span>
+        <span> {{gnome?.id }} </span>
       </li>
       <li class="details-list">
         <div class="details-icon">
             <i class="fa fa-vcard"></i>
         </div>
         <strong class="details-title"> Name: </strong> 
-        <span> 0 </span>
+        <span> {{gnome?.name }} </span>
       </li>
       <li class="details-list">
         <div class="details-icon">
             <i class="fa fa-trophy"></i>
         </div>
         <strong class="details-title"> Age: </strong> 
-        <span> 0 </span>
+        <span> {{gnome?.age }} </span>
       </li>
       <li class="details-list">
         <div class="details-icon">
             <i class="fa fa-scissors"></i>
         </div>
         <strong class="details-title"> Hair color: </strong> 
-        <span> 0 </span>
+        <span> {{gnome?.hair_color }} </span>
       </li>
       <li class="details-list">
         <div class="details-icon">
             <i class="fa fa-balance-scale"></i>
         </div>
         <strong class="details-title"> Weight: </strong> 
-        <span> 0 </span>
+        <span> {{gnome?.weight }} </span>
       </li>
     </ul>
   </div>
@@ -44,13 +44,14 @@
     <div class="gnome-attr">
       <h6>Professions</h6>
       <ul>
-        <li>Professions 1</li>
+        <li *ngFor="let profession of gnome?.professions"> {{profession}} </li>
       </ul>
     </div>
     <div class="gnome-attr">
       <h6>Friends</h6>
-      <ul>
-        <li>Friends 1</li>
+      <ul >
+        <i *ngIf="!gnome?.friends.length" class="fa fa-frown-o no-friends"></i>
+        <li *ngFor="let friend of gnome?.friends"> {{friend}}  </li>
       </ul>
     </div>
   </div>
