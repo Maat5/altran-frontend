@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="title">
+    #{{gnome?.id}} {{gnome?.name}}
+  </div>
+  <div class="picture">
+    <img [src]="gnome?.thumbnail" alt="{{gnome?.name}}">
+  </div>
+  <div class="content">
+    <ul class="content-details">
+      <li>
+        <span class="details-title"> Id: </span> {{gnome?.id}}
+      </li>
+      <li>
+        <span class="details-title"> Name: </span> {{gnome?.name}}
+      </li>
+      <li>
+        <span class="details-title"> Professions: </span> {{gnome?.professions}}
+      </li>
+      <li>
+        <span class="details-title"> Age: </span> {{gnome?.age}}
+      </li>
+      <li>
+        <span class="details-title"> Hair color: </span> {{gnome?.hair_color}}
+      </li>
+      <li>
+        <span class="details-title"> Weight: </span> {{gnome?.weight}}
+      </li>
+    </ul>
+  </div>
+</div>
