@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Components
 import { InputFilterComponent } from './input-filter/input-filter.component';
+import { PaginateComponent } from './paginate/paginate.component';
 
 @NgModule({
   imports: [
@@ -10,7 +11,7 @@ import { InputFilterComponent } from './input-filter/input-filter.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports: [InputFilterComponent],
-  declarations: [InputFilterComponent]
+  exports: [InputFilterComponent, PaginateComponent],
+  declarations: [InputFilterComponent, PaginateComponent]
 })
 export class SharedModule { }

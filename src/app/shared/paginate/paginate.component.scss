@@ -1,0 +1,39 @@
+.paginate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-flow: row nowrap;
+
+  button {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    background-color: #FFFFFF;
+    border: 1px solid #007EAF;
+    color: #007EAF;
+    font-weight: bold;
+    margin-right: 5px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: #007EAF;
+      color: #FFFFFF;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+  }
+  .pages {
+    padding: 5px;
+    margin-right: 5px;
+  }
+  
+}
