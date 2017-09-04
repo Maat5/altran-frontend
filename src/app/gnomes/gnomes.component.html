@@ -13,7 +13,7 @@
     (pageUpdated)="pageUpdated($event)">
   </paginate>
   <div class="gnomes-cards">
-    <gnome-card *ngFor="let gnome of filtered;" [gnome]="gnome">
+    <gnome-card *ngFor="let gnome of filtered;" [gnome]="gnome" (click)="selectGnome(gnome)">
     </gnome-card>
   </div>
 </div>

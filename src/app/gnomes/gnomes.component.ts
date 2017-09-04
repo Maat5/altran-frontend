@@ -2,6 +2,7 @@ import { Component, Inject, OnInit} from '@angular/core';
 import { ApiRequestsService } from '../api/requests.service';
 import { Config } from  '../app.config';
 import { ConfigInterface, GnomeInterface } from '../interfaces';
+import { GnomesService } from './gnomes.service';
 
 @Component({
   selector: 'gnomes',
@@ -16,7 +17,8 @@ export class GnomesComponent implements OnInit {
 
   constructor(
     @Inject(Config) private config: ConfigInterface,
-    private api: ApiRequestsService
+    private api: ApiRequestsService,
+    private gnomesService: GnomesService
   ){}
 
   ngOnInit() {
@@ -27,9 +29,10 @@ export class GnomesComponent implements OnInit {
   getGnomes() {
     this.api.get(this.config.apiUrl)
       .subscribe(
-        data  => { 
+        data  => {
           this._gnomes = data['Brastlewark'] || [];
           this.gnomes = data['Brastlewark'] || [];
+          this.gnomesService.data = this._gnomes;
         },
         error => console.log('error', error)
       )
@@ -43,6 +46,10 @@ export class GnomesComponent implements OnInit {
   // update content on page change
   pageUpdated(content: Array<any>) {
     this.filtered = content;
+  }
+
+  selectGnome(gnome: GnomeInterface) {
+    this.gnomesService.profile = gnome;
   }
 
 }
