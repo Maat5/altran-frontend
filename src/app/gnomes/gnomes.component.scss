@@ -13,4 +13,24 @@
       margin: 10px auto;
     }
   }
+
+  .utils-container {
+    text-align: center;
+    app-loading {
+      width: 100%;
+      display: inline-block;
+      margin-top: 50px;
+    }
+
+    .error-message {
+      margin-top: 80px;
+      i {
+        font-size: 2.4em;
+        color: #D9B121;
+      }
+      h4 {
+        margin-top: 10px;
+      }
+    }
+  }
 }

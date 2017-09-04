@@ -14,6 +14,7 @@ export class GnomesComponent implements OnInit {
   _gnomes: Array<GnomeInterface> = [];
   gnomes: Array<GnomeInterface> = [];
   filtered: Array<GnomeInterface> = [];
+  error: Boolean = false;
 
   constructor(
     @Inject(Config) private config: ConfigInterface,
@@ -33,8 +34,12 @@ export class GnomesComponent implements OnInit {
           this._gnomes = data['Brastlewark'] || [];
           this.gnomes = data['Brastlewark'] || [];
           this.gnomesService.data = this._gnomes;
+          this.error = false;
         },
-        error => console.log('error', error)
+        error => {
+          console.log('error', error);
+          this.error = true;
+        }
       )
   }
 

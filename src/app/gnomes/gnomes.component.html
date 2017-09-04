@@ -8,10 +8,20 @@
     </input-filter>
   </div>
   <paginate 
+    [hidden]="!_gnomes.length"
     [items]="gnomes" 
     [perPage]="10"
     (pageUpdated)="pageUpdated($event)">
   </paginate>
+
+  <div class="utils-container">
+    <app-loading *ngIf="!_gnomes.length && !error"></app-loading>
+    <div class="error-message"  *ngIf="error">
+      <i class="fa fa-warning"></i>
+      <h4> Can't load data at this moment, check your connection and try again </h4>
+    </div>
+  </div>
+
   <div class="gnomes-cards">
     <gnome-card *ngFor="let gnome of filtered;" [gnome]="gnome" (click)="selectGnome(gnome)">
     </gnome-card>
