@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ApiRequestsService } from './api/requests.service';
 
 // config settings
 import { Config } from './app.config';
@@ -17,7 +18,8 @@ import { _Config } from './config';
     HttpModule
   ],
   providers: [
-    { provide: Config, useValue: _Config }
+    { provide: Config, useValue: _Config },
+    ApiRequestsService
   ],
   bootstrap: [AppComponent]
 })
