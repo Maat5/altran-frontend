@@ -3,6 +3,7 @@
   position: relative;
   max-width: 300px;
   border: 1px solid #95989A;
+  background-color: #FEFEFE;
   padding: 2px;
   box-shadow: 0 4px 2px -2px rgba(128,128,128, 0.5);
   border-radius: 3px;
@@ -18,7 +19,7 @@
 
   .filter-input  {
     height: 25px !important;
-    background-color: #F9F7F5;
+    background-color:transparent;
     border: 0;
     padding: 5px;
     box-shadow: none;
