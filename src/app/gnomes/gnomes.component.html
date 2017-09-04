@@ -7,8 +7,13 @@
       (filtered)="filterUpdated($event)">
     </input-filter>
   </div>
+  <paginate 
+    [items]="gnomes" 
+    [perPage]="10"
+    (pageUpdated)="pageUpdated($event)">
+  </paginate>
   <div class="gnomes-cards">
-    <gnome-card *ngFor="let gnome of gnomes;" [gnome]="gnome">
+    <gnome-card *ngFor="let gnome of filtered;" [gnome]="gnome">
     </gnome-card>
   </div>
 </div>
