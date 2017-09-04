@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit} from '@angular/core';
+import { ApiRequestsService } from '../api/requests.service';
+import { Config } from  '../app.config';
+import { ConfigInterface, GnomeInterface } from '../interfaces';
 
 @Component({
   selector: 'gnomes',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GnomesComponent implements OnInit {
 
-  constructor() { }
+  gnomes: Array<GnomeInterface> = [];
+
+  constructor(
+    @Inject(Config) private config: ConfigInterface,
+    private api: ApiRequestsService
+  ){}
 
   ngOnInit() {
+    this.getGnomes();
+  }
+
+  getGnomes() {
+    this.api.get(this.config.apiUrl)
+      .subscribe(
+        data  => this.gnomes = data['Brastlewark'] || [],
+        error => console.log('error', error)
+      )
   }
 
 }

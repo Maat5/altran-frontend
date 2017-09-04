@@ -1,0 +1,9 @@
+.gnomes-cards {
+  display: flex;
+  flex-flow: row wrap;
+
+  gnome-card {
+    width: 250px;
+    margin: 5px auto;
+  }
+}

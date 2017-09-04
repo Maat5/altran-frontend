@@ -1,3 +1,8 @@
-<p>
-  gnomes works!
-</p>
+<div class="gnomes-container">
+  <h3 class="title"> Gnomes</h3>
+
+  <div class="gnomes-cards">
+    <gnome-card *ngFor="let gnome of gnomes;" [gnome]="gnome">
+    </gnome-card>
+  </div>
+</div>
