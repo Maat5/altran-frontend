@@ -6,22 +6,26 @@
   flex-flow: row nowrap;
 
   button {
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    background-color: #FFFFFF;
+    align-items: center;
+    background-color: #007EAF;
     border: 1px solid #007EAF;
-    color: #007EAF;
+    cursor: pointer;
+    color: #FFFFFF;
+    display: flex;
     font-weight: bold;
-    margin-right: 5px;
-
+    height: 40px;
+    justify-content: center;
+    transition: .4s all linear;
+    width: 40px;
+    
     &:last-child {
       margin: 0;
     }
-
+    
     &:hover {
-      background-color: #007EAF;
-      color: #FFFFFF;
+      border: 2px solid #D9B121;
+      background-color: #FFF;
+      color: #D9B121;
     }
 
     &:hover,
@@ -32,8 +36,8 @@
 
   }
   .pages {
-    padding: 5px;
-    margin-right: 5px;
+    font-weight: bold;
+    padding: 10px 20px;
   }
   
 }
