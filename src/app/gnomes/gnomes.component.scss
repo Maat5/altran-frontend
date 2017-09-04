@@ -9,8 +9,18 @@
     justify-content: flex-start;
   
     gnome-card {
-      width: 260px;
       margin: 10px auto;
+      width: 22%;
+      @media screen and (max-width: 1120px) {
+        width: 30%;
+      }
+      @media screen and (max-width: 840px) {
+        width: 45%;
+      }
+      @media screen and (max-width: 560px) {
+        max-width: 400px;
+        width: 100%;
+      }
     }
   }
 

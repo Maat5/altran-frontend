@@ -6,6 +6,8 @@ import { GnomesRoutingModule } from './gnomes.routing';
 //components
 import { GnomesComponent } from './gnomes.component';
 import { CardComponent } from './card/card.component';
+import { DetailsComponent } from './details/details.component';
+//service
 import { GnomesService } from './gnomes.service';
 
 @NgModule({
@@ -14,7 +16,7 @@ import { GnomesService } from './gnomes.service';
     SharedModule,
     GnomesRoutingModule
   ],
-  declarations: [GnomesComponent, CardComponent],
+  declarations: [GnomesComponent, CardComponent, DetailsComponent],
   providers: [GnomesService]
 })
 export class GnomesModule { }

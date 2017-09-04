@@ -1,0 +1,64 @@
+
+.details-container {
+	.gnome-details {
+		background: #fff;
+    border: 1px solid #ededed;
+    margin: 10px auto 0;
+    max-width: 600px;
+    padding: 20px;
+		text-align: center;
+		h6 {
+			font-size: 16px;
+			margin: 10px;
+		}
+		img {
+			border-radius: 50%;
+			height: 150px;
+			width: 150px;
+		}
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			border-top: 1px solid #ededed;
+			padding-top: 20px;
+			padding: 20px 20px 0;
+			.details-list {
+				align-items: center;
+				display: flex;
+				margin-bottom: 10px;
+				width: 33%;
+				.details-icon {
+					background: #007eaf;
+					border-radius: 50%;
+					color: #fff;
+					height: 25px;
+					margin-right: 7px;
+					padding: 5px;
+					width: 25px;
+				}
+				.details-title {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+	.gnome-details-list {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		.gnome-attr {
+			text-align: center;
+			width: 50%;
+			&:first-child {
+				border-right: 0.5px solid #ededed;
+			}
+			&:last-child {
+				border-left: 0.5px solid #ededed;
+			}
+			ul {
+				padding-left: 30px;
+			}
+		}
+	}
+}

@@ -1,9 +1,9 @@
-<div class="card">
-  <div class="title">
-    <i class="fa fa-user-circle-o"></i> {{gnome?.name}}
-  </div>
+<div class="card" [routerLink]="['./', gnome?.id]">
   <div class="picture">
     <img [src]="gnome?.thumbnail" alt="{{gnome?.name}}">
+  </div>
+  <div class="title">
+    <i class="fa fa-user-circle-o"></i> {{gnome?.name}}
   </div>
   <div class="content">
     <ul class="content-details">
