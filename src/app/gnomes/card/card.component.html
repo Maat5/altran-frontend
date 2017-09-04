@@ -1,6 +1,6 @@
 <div class="card">
   <div class="title">
-    #{{gnome?.id}} {{gnome?.name}}
+    <i class="fa fa-user-circle-o"></i> {{gnome?.name}}
   </div>
   <div class="picture">
     <img [src]="gnome?.thumbnail" alt="{{gnome?.name}}">
@@ -8,22 +8,48 @@
   <div class="content">
     <ul class="content-details">
       <li>
-        <span class="details-title"> Id: </span> {{gnome?.id}}
+        <span class="details-title"> 
+          <i class="fa fa-id-badge"></i> Id:
+        </span> 
+        {{gnome?.id}}
       </li>
       <li>
-        <span class="details-title"> Name: </span> {{gnome?.name}}
+        <span class="details-title">
+          <i class="fa fa-vcard"></i> Name: 
+        </span> 
+         {{gnome?.name}}
       </li>
       <li>
-        <span class="details-title"> Professions: </span> {{gnome?.professions}}
+        <span class="details-title"> 
+          <i class="fa fa-address-book"></i> Professions: 
+        </span> 
+        {{gnome?.professions}}
       </li>
       <li>
-        <span class="details-title"> Age: </span> {{gnome?.age}}
+        <span class="details-title"> 
+          <i class="fa fa-trophy"></i> Age: 
+        </span> 
+        {{gnome?.age}}
       </li>
       <li>
-        <span class="details-title"> Hair color: </span> {{gnome?.hair_color}}
+        <span class="details-title"> 
+          <i class="fa fa-scissors"></i> Hair color: 
+        </span> 
+        {{gnome?.hair_color}}
       </li>
       <li>
-        <span class="details-title"> Weight: </span> {{gnome?.weight}}
+        <span class="details-title"> 
+          <i class="fa fa-balance-scale"></i> Weight: 
+        </span> 
+        {{gnome?.weight}}
+      </li>
+      <li>
+        <span class="details-title"> 
+          <i class="fa fa-handshake-o"></i> Friends: 
+        </span> 
+
+        <i *ngIf="!gnome?.friends.length" class="fa fa-frown-o"></i>
+        {{gnome?.friends}}
       </li>
     </ul>
   </div>
