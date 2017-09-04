@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+//modules
+import { AppRoutingModule } from './app-routing.module';
 // providers
 import { ApiRequestsService } from './api/requests.service';
 // components
@@ -17,7 +19,8 @@ import { _Config } from './config';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [
     { provide: Config, useValue: _Config },
