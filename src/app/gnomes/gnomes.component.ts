@@ -3,6 +3,7 @@ import { ApiRequestsService } from '../api/requests.service';
 import { Config } from  '../app.config';
 import { ConfigInterface, GnomeInterface } from '../interfaces';
 import { GnomesService } from './gnomes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'gnomes',
@@ -19,7 +20,8 @@ export class GnomesComponent implements OnInit {
   constructor(
     @Inject(Config) private config: ConfigInterface,
     private api: ApiRequestsService,
-    private gnomesService: GnomesService
+    private gnomesService: GnomesService,
+    private router: Router
   ){}
 
   ngOnInit() {
@@ -53,8 +55,15 @@ export class GnomesComponent implements OnInit {
     this.filtered = content;
   }
 
+  /**
+   * Select gnome and display their information
+   * @param gnome 
+   */
   selectGnome(gnome: GnomeInterface) {
     this.gnomesService.profile = gnome;
+    setTimeout(() => {
+      this.router.navigate(['gnomes/', gnome.id]);
+    }, 10);
   }
 
 }
