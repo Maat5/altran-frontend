@@ -1,6 +1,12 @@
 <div class="gnomes-container">
-  <h3 class="title"> Gnomes</h3>
-
+  <div class="flex-row space-between">
+    <h3 class="title"> Gnomes</h3>
+    <input-filter 
+      [items]="_gnomes"
+      [search]="'name'"
+      (filtered)="filterUpdated($event)">
+    </input-filter>
+  </div>
   <div class="gnomes-cards">
     <gnome-card *ngFor="let gnome of gnomes;" [gnome]="gnome">
     </gnome-card>

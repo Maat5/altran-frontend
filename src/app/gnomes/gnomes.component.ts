@@ -10,6 +10,7 @@ import { ConfigInterface, GnomeInterface } from '../interfaces';
 })
 export class GnomesComponent implements OnInit {
 
+  _gnomes: Array<GnomeInterface> = [];
   gnomes: Array<GnomeInterface> = [];
 
   constructor(
@@ -24,9 +25,16 @@ export class GnomesComponent implements OnInit {
   getGnomes() {
     this.api.get(this.config.apiUrl)
       .subscribe(
-        data  => this.gnomes = data['Brastlewark'] || [],
+        data  => { 
+          this._gnomes = data['Brastlewark'] || [];
+          this.gnomes = data['Brastlewark'] || [];
+        },
         error => console.log('error', error)
       )
+  }
+
+  filterUpdated(gnomes: Array<any>) {
+    this.gnomes = gnomes;
   }
 
 }

@@ -25,3 +25,13 @@ html {
   margin-left: auto;
   width: 100%;
 }
+
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+  align-items:  center; 
+}
+
+.space-between {
+  justify-content: space-between;
+}
