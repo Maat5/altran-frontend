@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Components
 import { InputFilterComponent } from './input-filter/input-filter.component';
 import { PaginateComponent } from './paginate/paginate.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,15 @@ import { PaginateComponent } from './paginate/paginate.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports: [InputFilterComponent, PaginateComponent],
-  declarations: [InputFilterComponent, PaginateComponent]
+  exports: [
+    InputFilterComponent, 
+    PaginateComponent, 
+    LoadingComponent
+  ],
+  declarations: [
+    InputFilterComponent, 
+    PaginateComponent, 
+    LoadingComponent
+  ]
 })
 export class SharedModule { }
